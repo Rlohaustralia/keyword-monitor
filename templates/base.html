@@ -1,0 +1,17 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Keywords Monitor{% endblock %}</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body>
+<div class=".bg-light.bg-gradient">
+    {% include "header.html"%}
+    {% block content%}
+    {% endblock content%}
+    {% include "footer.html"%}
+
+</div>
+</body>
+</html>
