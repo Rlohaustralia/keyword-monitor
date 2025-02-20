@@ -8,3 +8,6 @@ from django.views import generic
 
 class indexView(generic.TemplateView):
     template_name  = "index.html"
+
+class aboutView(generic.TemplateView):
+    template_name = "about.html"
