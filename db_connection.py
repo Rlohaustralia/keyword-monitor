@@ -1,6 +1,6 @@
-from pymongo import MongoClient
+import pymongo
 
 # MongoDB Connection
-client = MongoClient("mongodb://localhost:27017")
+url = "mongodb://localhost:27017"
+client = pymongo.MongoClient(url)
 db = client["keyword_monitor"]
-keyword_collection = db["Keyword"]

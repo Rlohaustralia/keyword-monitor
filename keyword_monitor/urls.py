@@ -27,5 +27,8 @@ urlpatterns = [
     path('contact/', contactView.as_view(), name='contact'),
     path('signup/', signUpView.as_view(), name='signup'),
     path('signin/', signInView.as_view(), name='signin'),
-    path('signout/',signOutView.as_view(), name='signout')
+    path('signout/',signOutView.as_view(), name='signout'),
+    path('my_keyword/', keyword_view, name='mykeyword'),
+    path('my_keyword/delete/<str:keyword_text>/', delete_keyword_view, name='delete_keyword'),
+    path('my_keyword/update/<str:keyword_text>/', update_keyword_view, name='update_keyword')
 ]

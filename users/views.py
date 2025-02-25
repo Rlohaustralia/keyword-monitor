@@ -11,12 +11,12 @@ from .forms import SignUpForm
 #         return reverse("login")
     
 class signUpView(generic.CreateView):
-    template_name = "registration/signUp.html"
+    template_name = "registration_app/signUp.html"
     form_class = SignUpForm
     success_url = '/signin'
 
 class signInView(LoginView):
-    template_name = "registration/signIn.html"
+    template_name = "registration_app/signIn.html"
     success_url = '/'
 
 class signOutView(LogoutView):

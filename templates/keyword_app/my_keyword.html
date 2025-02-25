@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="text-center mb-20">
+            <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-800 mb-4">Personalize Your Keywords</h1>
+            <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Enter up to four keywords. Duplicate keywords are not allowed.</p>
+        </div>  
+        <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+            {% for keyword in keywords %}
+            <div class="p-2 sm:w-1/2 w-full">
+                <div class="bg-gray-100 rounded flex p-4 h-full items-center justify-between">
+                    <!-- Editable Keyword Field -->
+                    <span class="title-font font-medium text-gray-900 keyword-text" id="keyword-text-{{ forloop.counter }}">
+                        {{ keyword }}
+                    </span>
+
+                    <form method="post" action="{% url 'update_keyword' keyword %}" class="hidden keyword-form" id="keyword-form-{{ forloop.counter }}">
+                        {% csrf_token %}
+                        <input type="text" name="new_keyword" value="{{ keyword }}" class="border p-1 rounded text-sm" id="keyword-input-{{ forloop.counter }}">
+                        <button type="submit" class="text-gray-800 bg-gray-100 border-0 py-1 px-4 focus:outline-none hover:bg-gray-200 rounded text-sm">
+                            ✔️
+                        </button>
+                        <button type="button" class="text-gray-800 bg-red-100 border-0 py-1 px-4 focus:outline-none hover:bg-red-200 rounded text-sm cancel-btn" data-id="{{ forloop.counter }}">
+                            ❌
+                        </button>
+                    </form>
+
+                    <div>
+                        <!-- Edit Button -->
+                        <button class="text-gray-800 bg-blue-100 border-0 py-1 px-4 focus:outline-none hover:bg-blue-200 rounded text-sm edit-btn"
+                                data-id="{{ forloop.counter }}">
+                            ✎
+                        </button>
+
+                        <!-- Delete Button -->
+                        <form method="post" action="{% url 'delete_keyword' keyword %}" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="text-gray-800 bg-purple-100 border-0 py-1 px-4 focus:outline-none hover:bg-purple-200 rounded text-sm">
+                                ⛌
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="mt-10 text-center">
+            <form method="post" class="flex justify-center" id="add-keyword-form">
+                {% csrf_token %}
+                <input type="text" name="keyword" placeholder="Enter your keyword 👀" class="border p-2 rounded w-1/3 mr-2" required>
+                <button type="submit" class="text-gray-800 bg-blue-100 border-0 py-2 px-8 focus:outline-none hover:bg-blue-200 rounded text-lg">Add Keyword</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Keyword count check
+        const keywordCount = {{ keywords|length }};
+        const addKeywordForm = document.getElementById('add-keyword-form');
+
+        addKeywordForm.addEventListener('submit', function (event) {
+            if (keywordCount >= 4) {
+                event.preventDefault();
+                alert("Sorry ☹, You can only register up to four keywords.");
+            }
+        });
+
+        document.querySelectorAll(".edit-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                let id = this.getAttribute("data-id");
+                document.getElementById("keyword-text-" + id).classList.add("hidden");
+                document.getElementById("keyword-form-" + id).classList.remove("hidden");
+            });
+        });
+
+        document.querySelectorAll(".cancel-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                let id = this.getAttribute("data-id");
+                document.getElementById("keyword-text-" + id).classList.remove("hidden");
+                document.getElementById("keyword-form-" + id).classList.add("hidden");
+            });
+        });
+    });
+</script>
+
+{% endblock content %}
