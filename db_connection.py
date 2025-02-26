@@ -1,6 +1,10 @@
 import pymongo
+import os
+from dotenv import load_dotenv
 
 # MongoDB Connection
-url = "mongodb://localhost:27017"
-client = pymongo.MongoClient(url)
-db = client["keyword_monitor"]
+MONGO_URL = os.getenv("MONGO_URL")
+MONGO_DB_NAME = os.getenv("MONGO_DB_NAME")
+
+client = pymongo.MongoClient(MONGO_URL)
+db = client[MONGO_DB_NAME]
