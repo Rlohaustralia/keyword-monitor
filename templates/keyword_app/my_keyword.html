@@ -49,23 +49,24 @@
         <div class="mt-10 text-center">
             <form method="post" class="flex justify-center" id="add-keyword-form">
                 {% csrf_token %}
-                <input type="text" name="keyword" placeholder="Enter your keyword 👀" class="border p-2 rounded w-1/3 mr-2" required>
+                <input type="text" name="keyword" placeholder="Enter your keyword" class="border p-2 rounded w-1/3 mr-2" required>
                 <button type="submit" class="text-gray-800 bg-blue-100 border-0 py-2 px-8 focus:outline-none hover:bg-blue-200 rounded text-lg">Add Keyword</button>
             </form>
         </div>
     </div>
 </section>
-
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         // Keyword count check
         const keywordCount = {{ keywords|length }};
         const addKeywordForm = document.getElementById('add-keyword-form');
+        const keywordInput = addKeywordForm.querySelector('input[name="keyword"]');
 
         addKeywordForm.addEventListener('submit', function (event) {
             if (keywordCount >= 4) {
-                event.preventDefault();
+                event.preventDefault(); // Prevent form submission
                 alert("Sorry ☹, You can only register up to four keywords.");
+                keywordInput.value = ""; // Clear the input field
             }
         });
 
@@ -86,5 +87,6 @@
         });
     });
 </script>
+
 
 {% endblock content %}

@@ -19,16 +19,23 @@ from django.urls import path
 from main.views import *
 from users.views import *
 from keywords.views import *
+from scraper.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # Main
     path('', indexView.as_view(), name='index'),
     path('about/', aboutView.as_view(), name='about'),
     path('contact/', contactView.as_view(), name='contact'),
     path('signup/', signUpView.as_view(), name='signup'),
     path('signin/', signInView.as_view(), name='signin'),
     path('signout/',signOutView.as_view(), name='signout'),
+
+    # Keyword
     path('my_keyword/', keyword_view, name='mykeyword'),
     path('my_keyword/delete/<str:keyword_text>/', delete_keyword_view, name='delete_keyword'),
-    path('my_keyword/update/<str:keyword_text>/', update_keyword_view, name='update_keyword')
+    path('my_keyword/update/<str:keyword_text>/', update_keyword_view, name='update_keyword'),
+    
+    # Scraper
+    path('live_monitor/', live_monitor_view, name='live_monitor')
 ]
