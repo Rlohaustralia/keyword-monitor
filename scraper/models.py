@@ -1,26 +1,33 @@
-from django.db import models
 from db_connection import db
-from pymongo import MongoClient, ASCENDING
-from datetime import datetime
-import os
+from bs4 import BeautifulSoup
 
 # Create your models here.
-scrap_collection = db['Scrapper']
+scrap_collection = db['scrapper']
 
-# 컬렉션 인덱스 설정 (중복 방지)
-scrap_collection.create_index([("source_url", ASCENDING)], unique=True)
-
-def save_comment(keyword, platform, title, content, source_url):
+def save_scrap_data(keyword, platform, title, content, source_url, postdate):
     try:
         doc = {
-            "keyword" : keyword,
-            "platform" : platform,
-            "title" : title,
-            "content" : content,
-            "source_url" : source_url,
-            "timestamp" : datetime.utcnow()
+            "keyword": keyword,
+            "platform": platform,
+            "title": remove_html_tags(title),
+            "content": remove_html_tags(content),
+            "source_url": source_url,
+            "postdate": postdate
         }
-        scrap_collection.insert_one(doc)
-        return True
-    except:
+        # Use update_one with upsert=True to ignore duplicates
+        result = scrap_collection.update_one(
+            {"source_url": source_url},  # Filter for existing document
+            {"$setOnInsert": doc},       # Insert if it doesn't exist
+            upsert=True                   # Create if it doesn't exist (Update + Insert)
+        )
+        return result.upserted_id is not None  # Returns True if a new document was created
+    except Exception as e:
+        print(f"An error occurred: {e}")
         return False
+
+
+# Remove html tags
+def remove_html_tags(text):
+    soup = BeautifulSoup(text, "html.parser")
+    return soup.get_text()
+

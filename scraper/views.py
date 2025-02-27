@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from db_connection import db
 
 # Create your views here.
 
 def live_monitor_view(request):
-    return render(request, "scraper_app/live_monitor.html")
+    scrap_collection = db['scrapper']
+    naver_blogs = scrap_collection.find()
+    return render(request, "scraper_app/live_monitor.html", {'naver_blogs': naver_blogs})

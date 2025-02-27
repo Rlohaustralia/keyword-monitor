@@ -2,7 +2,7 @@ from django.db import models
 from db_connection import db
 
 # Create your models here.
-keyword_collection = db['Keyword']
+keyword_collection = db['keyword']
 
 # Create
 def add_keyword(keyword_text):
