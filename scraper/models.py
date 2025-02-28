@@ -1,7 +1,6 @@
 from db_connection import db
 from bs4 import BeautifulSoup
 
-# Create your models here.
 scrap_collection = db['scrapper']
 
 def save_scrap_data(keyword, platform, title, content, source_url, postdate):
@@ -14,20 +13,23 @@ def save_scrap_data(keyword, platform, title, content, source_url, postdate):
             "source_url": source_url,
             "postdate": postdate
         }
-        # Use update_one with upsert=True to ignore duplicates
+        # Use update_one to update existing documents or insert new ones
         result = scrap_collection.update_one(
-            {"source_url": source_url},  # Filter for existing document
-            {"$setOnInsert": doc},       # Insert if it doesn't exist
-            upsert=True                   # Create if it doesn't exist (Update + Insert)
+            {"source_url": source_url},  # Check if this URL already exists
+            {"$set": doc},               # Update all fields
+            upsert=True                   # Insert if not exists
         )
-        return result.upserted_id is not None  # Returns True if a new document was created
+
+        if result.upserted_id:
+            return {"success": True, "message": "New document inserted."}
+        elif result.modified_count > 0:
+            return {"success": True, "message": "Existing document updated."}
+        else:
+            return {"success": False, "message": "No changes were made (data might be the same)."}
     except Exception as e:
-        print(f"An error occurred: {e}")
-        return False
-
-
-# Remove html tags
+        return {"success": False, "message": str(e)}
+        
+# Remove HTML tags
 def remove_html_tags(text):
     soup = BeautifulSoup(text, "html.parser")
     return soup.get_text()
-

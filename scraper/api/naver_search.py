@@ -59,7 +59,6 @@ def search_all_keyword():
     results = {}
 
     for keyword in keywords:
-        print(f"🔍 Searching for '{keyword}' now..")
         search_result = search_naver_blog(keyword)
         if search_result:
             results[keyword] = search_result["items"]
