@@ -3,6 +3,7 @@ from db_connection import db
 
 # Create your models here.
 keyword_collection = db['keyword']
+scrap_collection = db['scrapper']
 
 # Create
 def add_keyword(keyword_text):

@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from .models import keyword_collection, add_keyword, get_all_keywords, update_keyword, delete_keyword
+from .models import keyword_collection, scrap_collection, add_keyword, get_all_keywords, update_keyword, delete_keyword
 from django.http import HttpResponse, request
 from django.contrib import messages
 from django.http import HttpResponseBadRequest
+
 
 
 # Create your views here.
@@ -28,6 +29,7 @@ def update_keyword_view(request, keyword_text):
         new_keyword = request.POST.get("new_keyword", "").strip()
         if new_keyword:
             update_keyword(keyword_text, new_keyword)
+            scrap_collection.delete_many({"keyword" : keyword_text})
             return redirect("mykeyword")
         else:
             return HttpResponseBadRequest("Invalid keyword")
@@ -37,5 +39,6 @@ def update_keyword_view(request, keyword_text):
 def delete_keyword_view(request, keyword_text):
     if request.method == "POST":
         delete_keyword(keyword_text)
+        scrap_collection.delete_many({"keyword" : keyword_text})
         return redirect("mykeyword")
     return HttpResponseBadRequest("Invalid request method")
