@@ -3,6 +3,7 @@ from .models import keyword_collection, scrap_collection, add_keyword, get_all_k
 from django.http import HttpResponse, request
 from django.contrib import messages
 from django.http import HttpResponseBadRequest
+import subprocess
 
 
 
@@ -18,6 +19,13 @@ def keyword_view(request):
         
         if keyword_text:
             add_keyword(keyword_text)
+            try:
+                subprocess.run(
+                    ["python", "-m", "scraper.api.naver_search", keyword_text],
+                    check=True
+                )
+            except subprocess.CalledProcessError as e:
+                return HttpResponse(f"Error in scraping process: {e}", status=500)
         return redirect("mykeyword")
     
     keywords = get_all_keywords()
@@ -28,8 +36,20 @@ def update_keyword_view(request, keyword_text):
     if request.method == "POST":
         new_keyword = request.POST.get("new_keyword", "").strip()
         if new_keyword:
+            # Update keyword
             update_keyword(keyword_text, new_keyword)
-            scrap_collection.delete_many({"keyword" : keyword_text})
+            
+            # Delete all data related to old keyword from scrap_collection
+            scrap_collection.delete_many({"keyword": keyword_text})
+
+            # Do scrapping with new keyword
+            try:
+                subprocess.run(
+                    ["python", "-m", "scraper.api.naver_search", new_keyword],
+                    check=True,
+                )
+            except subprocess.CalledProcessError as e:
+                return HttpResponse(f"Error in scraping process: {e}", status=500)
             return redirect("mykeyword")
         else:
             return HttpResponseBadRequest("Invalid keyword")
