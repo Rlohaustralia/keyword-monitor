@@ -53,7 +53,7 @@ def search_all_keyword():
     print(f"🐞 Keyword found: {keywords}")
 
     if not keywords:
-        print("There is no saved keyword")
+        print("🐞 There is no saved keyword")
         return
     
     results = {}
@@ -65,7 +65,12 @@ def search_all_keyword():
             
             # Save data
             for item in search_result["items"]:
-                save_scrap_data(keyword, "Naver Blog", item["title"], item["description"], item["link"], item["postdate"])
+                save_scrap_data(keyword,
+                                "Naver Blog",
+                                item["title"],
+                                item["description"],
+                                item["link"],
+                                item["postdate"])
 
     return results
 

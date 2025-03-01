@@ -5,5 +5,5 @@ from db_connection import db
 
 def live_monitor_view(request):
     scrap_collection = db['scrapper']
-    naver_blogs = scrap_collection.find()
-    return render(request, "scraper_app/live_monitor.html", {'naver_blogs': naver_blogs})
+    scraped_data = scrap_collection.find().sort("postdate",-1)
+    return render(request, "scraper_app/live_monitor.html", {'scraped_data': scraped_data})
