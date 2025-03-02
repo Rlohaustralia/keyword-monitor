@@ -46,6 +46,7 @@ def update_keyword_view(request, keyword_text):
             try:
                 subprocess.run(
                     ["python", "-m", "scraper.api.naver_search", new_keyword],
+                    ["python", "-m", "scraper.api.youtube_search", new_keyword]
                     check=True,
                 )
             except subprocess.CalledProcessError as e:
