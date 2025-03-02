@@ -22,6 +22,7 @@ def keyword_view(request):
             try:
                 subprocess.run(["python", "-m", "scraper.api.naver_search", keyword_text], check=True)
                 subprocess.run(["python", "-m", "scraper.api.youtube_search", keyword_text], check=True)
+                subprocess.run(["python", "-m", "scraper.api.google_search", keyword_text], check=True)
             except subprocess.CalledProcessError as e:
                 return HttpResponse(f"Error in scraping process: {e}", status=500)
         return redirect("mykeyword")
@@ -45,7 +46,7 @@ def update_keyword_view(request, keyword_text):
             try:
                 subprocess.run(["python", "-m", "scraper.api.naver_search", new_keyword], check=True)
                 subprocess.run(["python", "-m", "scraper.api.youtube_search", new_keyword], check=True)
-        
+                subprocess.run(["python", "-m", "scraper.api.google_search", keyword_text], check=True)
             except subprocess.CalledProcessError as e:
                 return HttpResponse(f"Error in scraping process: {e}", status=500)
             return redirect("mykeyword")
