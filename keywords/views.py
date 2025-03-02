@@ -22,6 +22,7 @@ def keyword_view(request):
             try:
                 subprocess.run(
                     ["python", "-m", "scraper.api.naver_search", keyword_text],
+                    ["python", "-m", "scraper.api.youtube_search", keyword_text],
                     check=True
                 )
             except subprocess.CalledProcessError as e:
