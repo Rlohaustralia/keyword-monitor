@@ -56,10 +56,15 @@ def searach_all_keywords():
     for keyword in keywords:
         search_result = search_youtube(keyword)
         if search_result:
-            results[keyword] = search_result["videos"]
+            results[keyword] = search_result["items"]
 
-            for video in search_result["videos"]:
-                video_url = "https://www.youtube.com/watch?v=" + video["id"] 
+            for video in search_result["items"]:  
+                video_id = video["id"].get("videoId")  # "videoId"를 가져옴
+                if not video_id:
+                    continue  # videoId가 없으면 건너뜀
+
+                video_url = f"https://www.youtube.com/watch?v={video_id}"
+
                 save_scrap_data(keyword,
                                 "YouTube",
                                 video["snippet"]["title"],
@@ -70,5 +75,4 @@ def searach_all_keywords():
 
 if __name__ == "__main__":
     search_results = searach_all_keywords()
-    
-                
+    print(search_results)

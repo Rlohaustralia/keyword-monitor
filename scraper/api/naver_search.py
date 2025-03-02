@@ -48,7 +48,7 @@ def search_naver_blog(keyword):
 
 
 # Execute searching
-def search_all_keyword():
+def search_all_keywords():
     keywords = get_all_keywords()
     print(f"🐞 Keyword found: {keywords}")
 
@@ -76,6 +76,6 @@ def search_all_keyword():
 
 
 if __name__ == "__main__":
-    search_results = search_all_keyword()
+    search_results = search_all_keywords()
     print(search_results)
 
