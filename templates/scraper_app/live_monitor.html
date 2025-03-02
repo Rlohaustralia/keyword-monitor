@@ -7,11 +7,15 @@
         <div class="py-8 flex flex-wrap md:flex-nowrap">
           <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
             <span class="font-semibold title-font text-gray-700">{{ data.keyword}}</span>
+            {% if not data.postdate == None %}
             <span class="mt-1 text-gray-500 text-sm">{{ data.postdate }}</span>
+            {% endif %}
             {% if data.platform ==  'Naver Blog' %}
             <span class="mt-1 text-green-500 text-sm">{{ data.platform }}</span>
             {% elif data.platform == 'YouTube' %}
             <span class="mt-1 text-red-500 text-sm">{{ data.platform }}</span>
+            {% elif data.platform == 'Google' %}
+            <span class="mt-1 text-gray-500 text-sm">{{ data.platform }}</span>
             {% endif%}
           </div>
           <div class="md:flex-grow">
