@@ -20,11 +20,8 @@ def keyword_view(request):
         if keyword_text:
             add_keyword(keyword_text)
             try:
-                subprocess.run(
-                    ["python", "-m", "scraper.api.naver_search", keyword_text],
-                    ["python", "-m", "scraper.api.youtube_search", keyword_text],
-                    check=True
-                )
+                subprocess.run(["python", "-m", "scraper.api.naver_search", keyword_text], check=True)
+                subprocess.run(["python", "-m", "scraper.api.youtube_search", keyword_text], check=True)
             except subprocess.CalledProcessError as e:
                 return HttpResponse(f"Error in scraping process: {e}", status=500)
         return redirect("mykeyword")
@@ -44,12 +41,11 @@ def update_keyword_view(request, keyword_text):
             scrap_collection.delete_many({"keyword": keyword_text})
 
             # Do scrapping with new keyword
+            
             try:
-                subprocess.run(
-                    ["python", "-m", "scraper.api.naver_search", new_keyword],
-                    ["python", "-m", "scraper.api.youtube_search", new_keyword],
-                    check=True
-                )
+                subprocess.run(["python", "-m", "scraper.api.naver_search", new_keyword], check=True)
+                subprocess.run(["python", "-m", "scraper.api.youtube_search", new_keyword], check=True)
+        
             except subprocess.CalledProcessError as e:
                 return HttpResponse(f"Error in scraping process: {e}", status=500)
             return redirect("mykeyword")
