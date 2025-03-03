@@ -49,7 +49,8 @@ def extract_date_published(item):
             if "datePublished" in tag:
                 return tag["datePublished"]
     return None
-            
+
+
 # Execute searching
 def searach_all_keywords():
     keywords = get_all_keywords()
@@ -68,6 +69,7 @@ def searach_all_keywords():
 
             for item in search_result["items"]:
                 date_published = extract_date_published(item)
+                date_published = normalize_date_published(date_published)
                 save_scrap_data(
                 keyword,
                 "Google",

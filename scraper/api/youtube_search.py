@@ -42,6 +42,12 @@ def search_youtube(keyword):
         return None
 
 
+def normalize_date_published(date_published):
+    # "2024-12-24T01:13:57Z" -> YYYYMMDD
+    if date_published:
+        normalize_date_published = date_published[:4] + date_published[5:7] + date_published[8:10]
+        return normalize_date_published
+    
 # Execute searching
 def searach_all_keywords():
     keywords = get_all_keywords()
@@ -64,13 +70,16 @@ def searach_all_keywords():
                     continue  # videoId가 없으면 건너뜀
 
                 video_url = f"https://www.youtube.com/watch?v={video_id}"
+                video_published_date = video["snippet"]["publishedAt"]
+                normalized_published_date = normalize_date_published(video_published_date)
 
                 save_scrap_data(keyword,
                                 "YouTube",
                                 video["snippet"]["title"],
                                 video["snippet"]["description"],
                                 video_url,
-                                video["snippet"]["publishedAt"])
+                                normalized_published_date
+                )
     return results
 
 if __name__ == "__main__":
