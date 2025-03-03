@@ -52,7 +52,7 @@ def extract_date_published(item):
 
 
 # Execute searching
-def searach_all_keywords():
+def search_all_keywords():
     keywords = get_all_keywords()
     print(f"🐞 Keyword found: {keywords}")
 
@@ -78,8 +78,3 @@ def searach_all_keywords():
                 date_published,
                 )
     return results
-
-            
-if __name__ == "__main__":
-    search_results = searach_all_keywords()
-    print(search_results)

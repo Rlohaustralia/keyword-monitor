@@ -73,9 +73,3 @@ def search_all_keywords():
                                 item["postdate"])
 
     return results
-
-
-if __name__ == "__main__":
-    search_results = search_all_keywords()
-    print(search_results)
-
