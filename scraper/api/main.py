@@ -6,14 +6,26 @@ from scraper.api.search_naver_cafe import search_all_keywords as search_naver_ca
 
 # Run all scrapers for keyword processing
 if __name__ == "__main__":
-    google_search_results = search_google()
-    print(google_search_results)
+    try:
+        google_search_results = search_google()
+        print("✅ Google Search Results:", google_search_results)
+    except Exception as e:
+        print("❌ Error with Google search:", e)
 
-    youtube_search_results = search_youtube()
-    print(youtube_search_results)
+    try:
+        youtube_search_results = search_youtube()
+        print("✅ YouTube Search Results:", youtube_search_results)
+    except Exception as e:
+        print("❌ Error with YouTube search:", e)
 
-    naver_blog_search_results = search_naver_blog()
-    print(naver_blog_search_results)
+    try:
+        naver_blog_search_results = search_naver_blog()
+        print("✅ Naver Blog Search Results:", naver_blog_search_results)
+    except Exception as e:
+        print("❌ Error with Naver Blog search:", e)
 
-    naver_cafe_search_results = search_naver_cafe()
-    print(naver_cafe_search_results)
+    try:
+        naver_cafe_search_results = search_naver_cafe()
+        print("✅ Naver Cafe Search Results:", naver_cafe_search_results)
+    except Exception as e:
+        print("❌ Error with Naver Cafe search:", e)
