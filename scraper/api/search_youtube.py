@@ -39,6 +39,7 @@ def search_youtube(keyword):
         return response.json()
     else:
         print(f"❌ API request failed (Keyword): {keyword}) - Status Code: {response.status_code}")
+        print(f"Response Text: {response.text}")
         return None
 
 

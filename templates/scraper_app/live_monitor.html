@@ -10,7 +10,7 @@
             {% if not data.postdate == None %}
             <span class="mt-1 text-gray-500 text-sm">{{ data.postdate }}</span>
             {% endif %}
-            {% if data.platform ==  'Naver Blog' %}
+            {% if data.platform ==  'Naver Blog' or data.platform == 'Naver Cafe' %}
             <span class="mt-1 text-green-500 text-sm">{{ data.platform }}</span>
             {% elif data.platform == 'YouTube' %}
             <span class="mt-1 text-red-500 text-sm">{{ data.platform }}</span>

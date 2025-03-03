@@ -40,7 +40,6 @@ def search_google(keyword):
     else:
         print(f"❌ API request failed (Keyword): {keyword}) - Status Code: {response.status_code}")
         print(response.text)
-        
         return None
 
 def extract_date_published(item):
