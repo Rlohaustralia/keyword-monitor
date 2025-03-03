@@ -69,7 +69,6 @@ def searach_all_keywords():
 
             for item in search_result["items"]:
                 date_published = extract_date_published(item)
-                date_published = normalize_date_published(date_published)
                 save_scrap_data(
                 keyword,
                 "Google",
