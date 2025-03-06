@@ -66,9 +66,9 @@ def search_all_keywords():
             results[keyword] = search_result["items"]
 
             for video in search_result["items"]:  
-                video_id = video["id"].get("videoId")  # "videoId"를 가져옴
+                video_id = video["id"].get("videoId")
                 if not video_id:
-                    continue  # videoId가 없으면 건너뜀
+                    continue  
 
                 video_url = f"https://www.youtube.com/watch?v={video_id}"
                 video_published_date = video["snippet"]["publishedAt"]

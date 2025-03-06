@@ -74,7 +74,8 @@ for link in post_links:
     print(f"Caption: {post_details['caption']}")
     print(f"User Name: {post_details['user_name']}")
     print(f"Post Date: {post_details['post_date']}")
-    
+    print("------------------------------------------------")
+     
     count += 1
 
 driver.quit()
