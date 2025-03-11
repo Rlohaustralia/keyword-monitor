@@ -49,6 +49,23 @@
         </div>
         {% endfor %}
       </div>
+      <!-- Pagination -->
+      <div class="-my-8 divide-y-2 divide-gray-100 px-5 py-20 text-center text-sm">
+        <span class="step-links">
+          {% if page_number > 1 %}
+            <a href="?page=1{% if platform %}&platform={{ platform }}{% endif %}{% if keyword %}&keyword={{ keyword }}{% endif %}{% if start_date %}&start_date={{ start_date }}{% endif %}{% if end_date %}&end_date={{ end_date }}{% endif %}" style="margin: 0 10px;">«</a>
+            <a href="?page={{page_number|add:-1}}{% if platform %}&platform={{ platform }}{% endif %}{% if keyword %}&keyword={{ keyword }}{% endif %}{% if start_date %}&start_date={{ start_date }}{% endif %}{% if end_date %}&end_date={{ end_date }}{% endif %}" style="margin: 0 10px;">‹</a>
+          {% endif %}
+          <span class="current" style="margin: 0 20px;">
+            Page {{page_number}}  of {{total_pages}}
+          </span>
+          {% if page_number < total_pages %}
+            <a href="?page={{page_number|add:1}}{% if platform %}&platform={{ platform }}{% endif %}{% if keyword %}&keyword={{ keyword }}{% endif %}{% if start_date %}&start_date={{ start_date }}{% endif %}{% if end_date %}&end_date={{ end_date }}{% endif %}" style="margin: 0 10px;">›</a>
+            <a href="?page={{total_pages}}{% if platform %}&platform={{ platform }}{% endif %}{% if keyword %}&keyword={{ keyword }}{% endif %}{% if start_date %}&start_date={{ start_date }}{% endif %}{% if end_date %}&end_date={{ end_date }}{% endif %}" style="margin: 0 10px;">»</a>
+          {% endif %}
+        </span>
+      </div>    
     </div>
 </section>
+
 {% endblock %}
