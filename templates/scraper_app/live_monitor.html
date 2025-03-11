@@ -14,17 +14,17 @@
         </select>
         <input type="text" name="keyword" placeholder="Search keyword" class="p-1 rounded text-sm mx-5"> 
         <input type="date" name="start_date" id="start_date" class="p-1 rounded text-sm" 
-            onblur="this.type='date'" onfocus="if(!this.value) this.type='text'" placeholder="Start Date">
+            onfocus="this.type='date'" onblur="if(!this.value) this.type='text'" placeholder="Start Date">
         <input type="date" name="end_date" id="end_date" class="p-1 rounded text-sm mx-5" 
-            onblur="this.type='date'" onfocus="if(!this.value) this.type='text'" placeholder="End Date">
+            onfocus="this.type='date'" onblur="if(!this.value) this.type='text'" placeholder="End Date">
         <button type="submit" class="text-gray p-1 rounded mx-5">🔎</button>
-    </form>
+      </form>
     
       <div class="-my-8 divide-y-2 divide-gray-100">
         {% for data in scraped_data %}
         <div class="py-8 flex flex-wrap md:flex-nowrap">
           <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-            <span class="font-semibold title-font text-gray-700">{{ data.keyword}}</span>
+            <span class="font-semibold title-font text-gray-700">{{ data.keyword }}</span>
             {% if not data.postdate == None %}
             <span class="mt-1 text-gray-500 text-sm">{{ data.postdate }}</span>
             {% endif %}
