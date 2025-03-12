@@ -56,7 +56,7 @@
             <a href="?page=1{% if platform %}&platform={{ platform }}{% endif %}{% if keyword %}&keyword={{ keyword }}{% endif %}{% if start_date %}&start_date={{ start_date }}{% endif %}{% if end_date %}&end_date={{ end_date }}{% endif %}" style="margin: 0 10px;">«</a>
             <a href="?page={{page_number|add:-1}}{% if platform %}&platform={{ platform }}{% endif %}{% if keyword %}&keyword={{ keyword }}{% endif %}{% if start_date %}&start_date={{ start_date }}{% endif %}{% if end_date %}&end_date={{ end_date }}{% endif %}" style="margin: 0 10px;">‹</a>
           {% endif %}
-          <span class="current" style="margin: 0 20px;">
+          <span class="current" style="margin: 0 17px;">
             Page {{page_number}}  of {{total_pages}}
           </span>
           {% if page_number < total_pages %}
