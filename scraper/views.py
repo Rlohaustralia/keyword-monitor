@@ -18,20 +18,19 @@ def paginate(query, page_number):
     return scraped_data, total_pages, page_number
 
 
-def live_monitor_view(request):
-
+def apply_filter(request):
     # Filtering keyword
-    platform = request.GET.get("platform","").strip()
-    keyword = request.GET.get("keyword","").strip()
-    start_date = request.GET.get("start_date","").strip()
-    end_date = request.GET.get("end_date","").strip()
-    
+    platform = request.GET.get("platform", "").strip()
+    keyword = request.GET.get("keyword", "").strip()
+    start_date = request.GET.get("start_date", "").strip()
+    end_date = request.GET.get("end_date", "").strip()
+
     query = {}
 
     if platform:
         query["platform"] = platform
     if keyword:
-        query["keyword"] = {"$regex" : keyword, "$options": "i"}
+        query["keyword"] = {"$regex": keyword, "$options": "i"}
     if start_date or end_date:
         query["postdate"] = {}
     if start_date:
@@ -42,8 +41,14 @@ def live_monitor_view(request):
     if end_date:
         try:
             query["postdate"]["$lte"] = datetime.strptime(end_date, "%Y-%m-%d").strftime("%Y%m%d")
-        except:
+        except ValueError:
             pass
+
+    return query, platform, keyword, start_date, end_date
+
+def live_monitor_view(request):
+
+    query, platform, keyword, start_date, end_date = apply_filter(request)
     
     page_number = int(request.GET.get('page',1))
     scraped_data, total_pages, page_number = paginate(query, page_number)
@@ -57,5 +62,4 @@ def live_monitor_view(request):
         'start_date': start_date,
         'end_date': end_date,
     })
-
 
