@@ -37,5 +37,7 @@ urlpatterns = [
     path('my_keyword/update/<str:keyword_text>/', update_keyword_view, name='update_keyword'),
     
     # Scraper
-    path('live_monitor/', live_monitor_view, name='live_monitor')
+    path('live_monitor/', live_monitor_view, name='live_monitor'),
+    path('download/', export_to_excel_view, name='export_excel')
+
 ]

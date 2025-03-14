@@ -2,24 +2,32 @@
 {% load static %}
 {% block content %}
 <section class="text-gray-600 body-font overflow-hidden">
-    <div class="container px-5 py-20 mx-auto">
 
-      <form method="GET" class="mb-30 text-center bg-gray-100 p-5 rounded">
-        <select name="platform" class="p-1 mx-5 rounded text-sm">
-            <option value="">All Platforms</option>
-            <option value="YouTube">YouTube</option>
-            <option value="Google">Google</option>
-            <option value="Naver Blog">Naver Blog</option>
-            <option value="Naver Cafe">Naver Cafe</option>
-        </select>
-        <input type="text" name="keyword" placeholder="Search keyword" class="p-1 rounded text-sm mx-5"> 
-        <input type="date" name="start_date" id="start_date" class="p-1 rounded text-sm" 
-            onfocus="this.type='date'" onblur="if(!this.value) this.type='text'" placeholder="Start Date">
-        <input type="date" name="end_date" id="end_date" class="p-1 rounded text-sm mx-5" 
-            onfocus="this.type='date'" onblur="if(!this.value) this.type='text'" placeholder="End Date">
-        <button type="submit" class="text-gray p-1 rounded mx-5">🔎</button>
+  <div class="container px-5 py-20 mx-auto">
+    <form method="GET" class="mb-20 text-center bg-gray-100 p-5 rounded">
+      <select name="platform" class="p-1 mx-5 rounded text-sm">
+          <option value="">All Platforms</option>
+          <option value="YouTube">YouTube</option>
+          <option value="Google">Google</option>
+          <option value="Naver Blog">Naver Blog</option>
+          <option value="Naver Cafe">Naver Cafe</option>
+      </select>
+      <input type="text" name="keyword" placeholder="Search keyword" class="p-1 rounded text-sm mx-5"> 
+      <input type="date" name="start_date" id="start_date" class="p-1 rounded text-sm" 
+          onfocus="this.type='date'" onblur="if(!this.value) this.type='text'" placeholder="Start Date">
+      <input type="date" name="end_date" id="end_date" class="p-1 rounded text-sm mx-5" 
+          onfocus="this.type='date'" onblur="if(!this.value) this.type='text'" placeholder="End Date">
+      <button type="submit" class="text-gray p-1 rounded mx-5">🔎</button>
+    </form>
+    <div class="flex justify-end">
+      <form method="GET" action="{% url 'export_excel' %}" class="btn btn-primary mb-10 text-center text-sm hover:text-blue-500" id="download-btn">
+        <input type="hidden" name="platform" value="{{ platform }}">
+        <input type="hidden" name="keyword" value="{{ keyword }}">
+        <input type="hidden" name="start_date" value="{{ start_date }}">
+        <input type="hidden" name="end_date" value="{{ end_date }}">
+        <button type="submit">📂 󠁫󠁫󠁫 󠁫Export to Excel</button>
       </form>
-    
+    </div>
       <div class="-my-8 divide-y-2 divide-gray-100">
         {% for data in scraped_data %}
         <div class="py-8 flex flex-wrap md:flex-nowrap">

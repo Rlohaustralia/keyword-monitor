@@ -2,6 +2,8 @@ from django.shortcuts import render
 from db_connection import db
 from datetime import datetime
 from django.core.paginator import Paginator
+from django.http import HttpResponse
+import pandas
 
 # Create your views here.
 
@@ -25,26 +27,27 @@ def apply_filter(request):
     start_date = request.GET.get("start_date", "").strip()
     end_date = request.GET.get("end_date", "").strip()
 
-    query = {}
+    filter_query = {}
 
     if platform:
-        query["platform"] = platform
+        filter_query["platform"] = platform
     if keyword:
-        query["keyword"] = {"$regex": keyword, "$options": "i"}
+        filter_query["keyword"] = {"$regex": keyword, "$options": "i"}
     if start_date or end_date:
-        query["postdate"] = {}
+        filter_query["postdate"] = {}
     if start_date:
         try:
-            query["postdate"]["$gte"] = datetime.strptime(start_date, "%Y-%m-%d").strftime("%Y%m%d")
+            filter_query["postdate"]["$gte"] = datetime.strptime(start_date, "%Y-%m-%d").strftime("%Y%m%d")
         except ValueError:
             pass
     if end_date:
         try:
-            query["postdate"]["$lte"] = datetime.strptime(end_date, "%Y-%m-%d").strftime("%Y%m%d")
+            filter_query["postdate"]["$lte"] = datetime.strptime(end_date, "%Y-%m-%d").strftime("%Y%m%d")
         except ValueError:
             pass
+    print(filter_query)
+    return filter_query, platform, keyword, start_date, end_date
 
-    return query, platform, keyword, start_date, end_date
 
 def live_monitor_view(request):
 
@@ -63,3 +66,32 @@ def live_monitor_view(request):
         'end_date': end_date,
     })
 
+
+def export_to_excel_view(request):
+    # Get the filter query from the request
+    filter_query, platform, keyword, start_date, end_date = apply_filter(request)
+
+    if filter_query:
+        data = list(scrap_collection.find(filter_query, {"_id": 0}))
+    else:
+        data = list(scrap_collection.find({}, {"_id": 0}))
+
+    # Convert the fetched data into a Pandas DataFrame
+    df = pandas.DataFrame(data)
+
+    # Adjust index so it starts from 1 instead of 0 (for better user experience in Excel)
+    df.index += 1  # Index starts from 1 instead of 0
+
+    # Prepare the HTTP response as an Excel file download
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+
+    # Set the content disposition header to indicate that this is a downloadable file
+    response['Content-Disposition'] = 'attachment; filename="data.xlsx"'
+
+    # Write the DataFrame to the Excel file and return it as a response
+    # Use the openpyxl engine to handle the Excel file creation
+    with pandas.ExcelWriter(response, engine='openpyxl') as writer:
+        df.to_excel(writer, index=True)  # Write DataFrame to Excel, including index
+
+    return response
+    
