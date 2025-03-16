@@ -100,8 +100,12 @@ def export_to_excel_view(request):
 def refresh_data_view(request):
     if request.method == "POST":
         keyword_text = request.POST.get("keyword","").strip()
+        platform = request.GET.get("platform", "").strip()
+        start_date = request.GET.get("start_date", "").strip()
+        end_date = request.GET.get("end_date", "").strip()
+
         try:
             subprocess.run(["python", "-m", "scraper.api.main", keyword_text], check=True)
         except subprocess.CalledProcessError as e:
             return HttpResponse(f"Error in refresh process: {e}", status=500)
-    return redirect("live_monitor")
+    return redirect(f"/live_monitor/?platform={platform}&keyword={keyword_text}&start_date={start_date}&end_date={end_date}")

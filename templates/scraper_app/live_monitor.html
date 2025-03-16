@@ -22,6 +22,10 @@
     <div class="flex justify-end">
       <form method="POST", action="{% url 'refresh_data' %}" class="btn btn-primary mb-10 text-center text-sm hover:text-blue-500">
         {% csrf_token %}
+        <input type="hidden" name="platform" value="{{ platform }}">
+        <input type="hidden" name="keyword" value="{{ keyword }}">
+        <input type="hidden" name="start_date" value="{{ start_date }}">
+        <input type="hidden" name="end_date" value="{{ end_date }}">
         <button type="submit" class=mx-5>🔄 󠁫󠁫󠁫 󠁫Refresh data</button>
       </form>
       <form method="GET" action="{% url 'export_excel' %}" class="btn btn-primary mb-10 text-center text-sm hover:text-blue-500" id="download-btn">
