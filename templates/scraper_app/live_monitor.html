@@ -20,6 +20,10 @@
       <button type="submit" class="text-gray p-1 rounded mx-5">🔎</button>
     </form>
     <div class="flex justify-end">
+      <form method="POST", action="{% url 'refresh_data' %}" class="btn btn-primary mb-10 text-center text-sm hover:text-blue-500">
+        {% csrf_token %}
+        <button type="submit" class=mx-5>🔄 󠁫󠁫󠁫 󠁫Refresh data</button>
+      </form>
       <form method="GET" action="{% url 'export_excel' %}" class="btn btn-primary mb-10 text-center text-sm hover:text-blue-500" id="download-btn">
         <input type="hidden" name="platform" value="{{ platform }}">
         <input type="hidden" name="keyword" value="{{ keyword }}">

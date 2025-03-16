@@ -38,6 +38,6 @@ urlpatterns = [
     
     # Scraper
     path('live_monitor/', live_monitor_view, name='live_monitor'),
-    path('download/', export_to_excel_view, name='export_excel')
-
+    path('download/', export_to_excel_view, name='export_excel'),
+    path('refresh_data/', refresh_data_view, name='refresh_data')
 ]

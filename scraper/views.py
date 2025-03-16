@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from db_connection import db
 from datetime import datetime
 from django.core.paginator import Paginator
 from django.http import HttpResponse
 import pandas
+import subprocess
 
 # Create your views here.
 
@@ -95,3 +96,12 @@ def export_to_excel_view(request):
 
     return response
     
+
+def refresh_data_view(request):
+    if request.method == "POST":
+        keyword_text = request.POST.get("keyword","").strip()
+        try:
+            subprocess.run(["python", "-m", "scraper.api.main", keyword_text], check=True)
+        except subprocess.CalledProcessError as e:
+            return HttpResponse(f"Error in refresh process: {e}", status=500)
+    return redirect("live_monitor")
