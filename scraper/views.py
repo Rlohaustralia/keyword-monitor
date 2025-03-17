@@ -5,6 +5,7 @@ from django.core.paginator import Paginator
 from django.http import HttpResponse
 import pandas
 import subprocess
+import time
 
 # Create your views here.
 
@@ -57,6 +58,9 @@ def live_monitor_view(request):
     page_number = int(request.GET.get('page',1))
     scraped_data, total_pages, page_number = paginate(query, page_number)
 
+    # Convert `_id` to string and store it as "id" to track newly updated data
+    scraped_data = [{**data, "id": str(data["_id"])} for data in scraped_data]
+   
     return render(request, "scraper_app/live_monitor.html", {
         'scraped_data': scraped_data,
         'page_number': page_number,
@@ -100,12 +104,29 @@ def export_to_excel_view(request):
 def refresh_data_view(request):
     if request.method == "POST":
         keyword_text = request.POST.get("keyword","").strip()
-        platform = request.GET.get("platform", "").strip()
-        start_date = request.GET.get("start_date", "").strip()
-        end_date = request.GET.get("end_date", "").strip()
+        platform = request.POST.get("platform", "").strip()
+        start_date = request.POST.get("start_date", "").strip()
+        end_date = request.POST.get("end_date", "").strip()
 
+        # Extract ids from exisiting data
+        existing_ids = set(str(doc["_id"]) for doc in scrap_collection.find({}, {"_id" : 1}))
+
+        # Scarping
         try:
             subprocess.run(["python", "-m", "scraper.api.main", keyword_text], check=True)
+            time.sleep(2)
         except subprocess.CalledProcessError as e:
             return HttpResponse(f"Error in refresh process: {e}", status=500)
+        
+        # Extract ids from updated data
+        updated_ids = set(str(doc["_id"]) for doc in scrap_collection.find({}, {"_id" : 1}))
+    
+        # Fine new ids added
+        new_ids = list(updated_ids - existing_ids)
+        print(f"new_ids: {new_ids}")
+
+        request.session["new_post_ids"] = new_ids
+        request.session.modified =  True
+
+        
     return redirect(f"/live_monitor/?platform={platform}&keyword={keyword_text}&start_date={start_date}&end_date={end_date}")
