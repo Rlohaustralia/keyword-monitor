@@ -3,10 +3,12 @@ import time
 import subprocess
 import os
 import sys
-
+sys.path.append(os.path.abspath('/Users/ej/keyword_monitor'))
+from scraper.views import *
 
 def scrape_data_automatically():
     try:
+        os.chdir('/Users/ej/keyword_monitor')
         command = "python -m scraper.api.main keyword_text"
         os.system(command)
         time.sleep(2)
@@ -18,5 +20,5 @@ schedule.every(1).minute.do(scrape_data_automatically)
 
 while True:
     schedule.run_pending()
-    time.sleep(2)
+    time.sleep(1)
 
