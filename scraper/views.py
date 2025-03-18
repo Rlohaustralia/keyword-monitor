@@ -12,14 +12,26 @@ import time
 scrap_collection = db['scrapper']
 
 
-def paginate(query, page_number):
+def paginate(query, page_number, new_ids):
     ITEMS_PER_PAGE = 10
     total_items = scrap_collection.count_documents(query)
     total_pages = (total_items // ITEMS_PER_PAGE) + (1 if total_items % ITEMS_PER_PAGE > 0 else 0)
     page_number = max(1, min(page_number, total_pages))
     skip_count = (page_number - 1) * ITEMS_PER_PAGE
-    scraped_data = scrap_collection.find(query).sort("postdate", -1).skip(skip_count).limit(ITEMS_PER_PAGE)
-    return scraped_data, total_pages, page_number
+
+    # Retrieve all data sorted by "postdate" in descending order
+    all_scraped_data = list(scrap_collection.find(query).sort("postdate", -1))
+
+    # Find newly updated data
+    new_scraped_data = [data for data in all_scraped_data if str(data["_id"]) in new_ids]
+    old_scraped_data = [data for data in all_scraped_data if str(data["_id"]) not in new_ids]
+    
+    # Move updated (newly added) data to the top
+    sorted_data = new_scraped_data + old_scraped_data
+
+    # Apply pagination
+    paginated_data = sorted_data[skip_count : skip_count + ITEMS_PER_PAGE]
+    return paginated_data, total_pages, page_number
 
 
 def apply_filter(request):
@@ -54,9 +66,10 @@ def apply_filter(request):
 def live_monitor_view(request):
 
     query, platform, keyword, start_date, end_date = apply_filter(request)
-    
     page_number = int(request.GET.get('page',1))
-    scraped_data, total_pages, page_number = paginate(query, page_number)
+
+    new_ids = request.session.get("new_post_ids", [])
+    scraped_data, total_pages, page_number = paginate(query, page_number, new_ids)
 
     # Convert `_id` to string and store it as "id" to track newly updated data
     scraped_data = [{**data, "id": str(data["_id"])} for data in scraped_data]
