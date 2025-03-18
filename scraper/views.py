@@ -136,7 +136,7 @@ def refresh_data_view(request):
     
         # Fine new ids added
         new_ids = list(updated_ids - existing_ids)
-        print(f"new_ids: {new_ids}")
+        print(f"🆕 Newly added Ids: {new_ids}")
 
         request.session["new_post_ids"] = new_ids
         request.session.modified =  True
