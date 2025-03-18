@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/ej/keyword_monitor/automation/web_scraping_scheduler.py", line 14, in <module>
+    scheduler.every(1).minute.do(scrape_data_automatically)
+    ^^^^^^^^^^^^^^^
+AttributeError: module 'scheduler' has no attribute 'every'
