@@ -18,8 +18,10 @@ keyword_collection = db['keyword']
 
 
 # Extract keywords from db
-def get_all_keywords():
-    keywords = keyword_collection.find({}, {"_id" : 0, "keyword" : 1})
+def get_all_keywords(user):
+    keywords = keyword_collection.find(
+        {"user" : user}, {"_id" : 0, "keyword" : 1}
+        )
     return [item["keyword"] for item in keywords]
 
 
@@ -51,9 +53,9 @@ def extract_date_published(item):
 
 
 # Execute searching
-def search_all_keywords():
-    keywords = get_all_keywords()
-    print(f"🐞 Keyword found: {keywords}")
+def search_all_keywords(user):
+    keywords = get_all_keywords(user)
+    print(f"🐞 Keyword found for {user.username}: {keywords}")
 
     if not keywords:
         print("🐞 There is no saved keyword")
@@ -69,6 +71,7 @@ def search_all_keywords():
             for item in search_result["items"]:
                 date_published = extract_date_published(item)
                 save_scrap_data(
+                user,
                 keyword,
                 "Google",
                 item["title"],
@@ -76,4 +79,5 @@ def search_all_keywords():
                 item["link"],
                 date_published,
                 )
+
     return results

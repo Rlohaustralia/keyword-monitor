@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from db_connection import db
 from datetime import datetime
 from django.core.paginator import Paginator
@@ -35,13 +36,16 @@ def paginate(query, page_number, new_ids):
 
 
 def apply_filter(request):
+    
+    user = request.user
+
     # Filtering keyword
     platform = request.GET.get("platform", "").strip()
     keyword = request.GET.get("keyword", "").strip()
     start_date = request.GET.get("start_date", "").strip()
     end_date = request.GET.get("end_date", "").strip()
 
-    filter_query = {}
+    filter_query = {"user" : user}
 
     if platform:
         filter_query["platform"] = platform
@@ -63,18 +67,22 @@ def apply_filter(request):
     return filter_query, platform, keyword, start_date, end_date
 
 
+@login_required
 def live_monitor_view(request):
+    user = request.user.username
 
     query, platform, keyword, start_date, end_date = apply_filter(request)
+    query["user"] = user
+    
     page_number = int(request.GET.get('page',1))
-
     new_ids = request.session.get("new_post_ids", [])
     scraped_data, total_pages, page_number = paginate(query, page_number, new_ids)
 
     # Convert `_id` to string and store it as "id" to track newly updated data
     scraped_data = [{**data, "id": str(data["_id"])} for data in scraped_data]
-   
+    
     return render(request, "scraper_app/live_monitor.html", {
+        'user' : user,
         'scraped_data': scraped_data,
         'page_number': page_number,
         'total_pages': total_pages,
@@ -115,6 +123,7 @@ def export_to_excel_view(request):
     
 
 def refresh_data_view(request):
+    
     if request.method == "POST":
         keyword_text = request.POST.get("keyword","").strip()
         platform = request.POST.get("platform", "").strip()

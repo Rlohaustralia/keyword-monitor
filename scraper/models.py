@@ -4,9 +4,10 @@ from datetime import datetime
 
 scrap_collection = db['scrapper']
 
-def save_scrap_data(keyword, platform, title, content, source_url, postdate):
+def save_scrap_data(user, keyword, platform, title, content, source_url, postdate):
     try:
         doc = {
+            "user" : user,
             "keyword": keyword,
             "platform": platform,
             "title": remove_html_tags(title),
@@ -14,9 +15,10 @@ def save_scrap_data(keyword, platform, title, content, source_url, postdate):
             "source_url": source_url,
             "postdate": postdate
         } 
+        
         # Use update_one to update existing documents or insert new ones
         result = scrap_collection.update_one(
-            {"source_url": source_url},  # Check if this URL already exists
+            {"source_url": source_url, "user": user},  # Check if this URL already exists
             {"$set": doc},               # Update all fields
             upsert=True                   # Insert if not exists
         )
