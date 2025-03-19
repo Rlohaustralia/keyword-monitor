@@ -2,12 +2,14 @@ from scraper.api.search_google import search_all_keywords as search_google
 from scraper.api.search_youtube import search_all_keywords as search_youtube
 from scraper.api.search_naver_blog import search_all_keywords as search_naver_blog
 from scraper.api.search_naver_cafe import search_all_keywords as search_naver_cafe
-
+import sys
 
 # Run all scrapers for keyword processing
 if __name__ == "__main__":
+    user = sys.argv[1]
+
     try:
-        google_search_results = search_google()
+        google_search_results = search_google(user)
         print("✅ Google Search Results:", google_search_results)
     except Exception as e:
         print("❌ Error with Google search:", e)

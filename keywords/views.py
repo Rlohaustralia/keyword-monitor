@@ -23,7 +23,7 @@ def keyword_view(request):
         if keyword_text:
             add_keyword(user, keyword_text)
             try:
-                subprocess.run(["python", "-m", "scraper.api.main", keyword_text], check=True)
+                subprocess.run(["python", "-m", "scraper.api.main", user, keyword_text], check=True)
             except subprocess.CalledProcessError as e:
                 return HttpResponse(f"Error in scraping process: {e}", status=500)
         return redirect("mykeyword")

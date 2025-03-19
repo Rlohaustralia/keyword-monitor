@@ -54,8 +54,9 @@ def extract_date_published(item):
 
 # Execute searching
 def search_all_keywords(user):
+ 
     keywords = get_all_keywords(user)
-    print(f"🐞 Keyword found for {user.username}: {keywords}")
+    print("🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡")
 
     if not keywords:
         print("🐞 There is no saved keyword")

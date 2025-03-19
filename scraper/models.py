@@ -15,7 +15,7 @@ def save_scrap_data(user, keyword, platform, title, content, source_url, postdat
             "source_url": source_url,
             "postdate": postdate
         } 
-        
+       
         # Use update_one to update existing documents or insert new ones
         result = scrap_collection.update_one(
             {"source_url": source_url, "user": user},  # Check if this URL already exists
