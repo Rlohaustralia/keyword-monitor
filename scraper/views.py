@@ -37,7 +37,7 @@ def paginate(query, page_number, new_ids):
 
 def apply_filter(request):
     
-    user = str(request.user)
+    user = str(request.user.id)
 
     # Filtering keyword
     platform = request.GET.get("platform", "").strip()
@@ -96,11 +96,15 @@ def live_monitor_view(request):
 def export_to_excel_view(request):
     # Get the filter query from the request
     filter_query, platform, keyword, start_date, end_date = apply_filter(request)
+    
 
+    user = str(request.user.id)
     if filter_query:
         data = list(scrap_collection.find(filter_query, {"_id": 0}))
     else:
-        data = list(scrap_collection.find({}, {"_id": 0}))
+        data = list(scrap_collection.find({"user" : user}, {"_id": 0}))
+
+    print(f"🔍 Data fetched for user {user}: {data}")
 
     # Convert the fetched data into a Pandas DataFrame
     df = pandas.DataFrame(data)
