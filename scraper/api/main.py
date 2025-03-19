@@ -15,19 +15,19 @@ if __name__ == "__main__":
         print("❌ Error with Google search:", e)
 
     try:
-        youtube_search_results = search_youtube()
+        youtube_search_results = search_youtube(user)
         print("✅ YouTube Search Results:", youtube_search_results)
     except Exception as e:
         print("❌ Error with YouTube search:", e)
 
     try:
-        naver_blog_search_results = search_naver_blog()
+        naver_blog_search_results = search_naver_blog(user)
         print("✅ Naver Blog Search Results:", naver_blog_search_results)
     except Exception as e:
         print("❌ Error with Naver Blog search:", e)
 
     try:
-        naver_cafe_search_results = search_naver_cafe()
+        naver_cafe_search_results = search_naver_cafe(user)
         print("✅ Naver Cafe Search Results:", naver_cafe_search_results)
     except Exception as e:
         print("❌ Error with Naver Cafe search:", e)

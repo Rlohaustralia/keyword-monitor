@@ -17,8 +17,10 @@ NAVER_CLIENT_SECRET = os.getenv("NAVER_CLIENT_SECRET")
 keyword_collection = db['keyword']
 
 # Extract keywords from db
-def get_all_keywords():
-    keywords = keyword_collection.find({}, {"_id" : 0, "keyword" : 1}) # Extract only keyword value
+def get_all_keywords(user):
+    keywords = keyword_collection.find(
+        {"user" : user}, {"_id" : 0, "keyword" : 1}
+        )
     return [item["keyword"] for item in keywords] # Convert to list
 
 
@@ -49,8 +51,8 @@ def search_naver_blog(keyword):
 
 
 # Execute searching
-def search_all_keywords():
-    keywords = get_all_keywords()
+def search_all_keywords(user):
+    keywords = get_all_keywords(user)
     print(f"🐞 Keyword found: {keywords}")
 
     if not keywords:
@@ -66,7 +68,8 @@ def search_all_keywords():
             
             # Save data
             for item in search_result["items"]:
-                save_scrap_data(keyword,
+                save_scrap_data(user,
+                                keyword,
                                 "Naver Blog",
                                 item["title"],
                                 item["description"],

@@ -14,7 +14,7 @@ import subprocess
 def keyword_view(request):
     if request.method == "POST":
         keyword_text = request.POST.get("keyword","").strip()
-        user = request.user.username
+        user = str(request.user.id)
 
         # Not allow duplicated keyword
         if keyword_collection.find_one({"user" : user, "keyword": keyword_text}):
@@ -28,7 +28,7 @@ def keyword_view(request):
                 return HttpResponse(f"Error in scraping process: {e}", status=500)
         return redirect("mykeyword")
     
-    user = request.user.username
+    user = str(request.user.id)
     keywords = get_all_keywords(user)
     return render(request, "keyword_app/my_keyword.html", {"keywords" : keywords})
 
@@ -37,7 +37,7 @@ def keyword_view(request):
 def update_keyword_view(request, keyword_text):
     if request.method == "POST":
         new_keyword = request.POST.get("new_keyword", "").strip()
-        user = request.user.username
+        user = str(request.user.id)
 
         if new_keyword:
             # Update keyword
@@ -48,7 +48,7 @@ def update_keyword_view(request, keyword_text):
 
             # Do scrapping with new keyword
             try:
-                subprocess.run(["python", "-m", "scraper.api.main", new_keyword], check=True)
+                subprocess.run(["python", "-m", "scraper.api.main", user, new_keyword], check=True)
             except subprocess.CalledProcessError as e:
                 return HttpResponse(f"Error in scraping process: {e}", status=500)
             return redirect("mykeyword")
@@ -60,7 +60,7 @@ def update_keyword_view(request, keyword_text):
 @login_required
 def delete_keyword_view(request, keyword_text):
     if request.method == "POST":
-        user = request.user.username
+        user = str(request.user.id)
 
         delete_keyword(user, keyword_text)
         scrap_collection.delete_many({"user" : user, "keyword" : keyword_text})

@@ -37,7 +37,7 @@ def paginate(query, page_number, new_ids):
 
 def apply_filter(request):
     
-    user = request.user
+    user = str(request.user)
 
     # Filtering keyword
     platform = request.GET.get("platform", "").strip()
@@ -69,7 +69,7 @@ def apply_filter(request):
 
 @login_required
 def live_monitor_view(request):
-    user = request.user.username
+    user = str(request.user.id)
 
     query, platform, keyword, start_date, end_date = apply_filter(request)
     query["user"] = user
