@@ -49,10 +49,11 @@ pip install -r requirements.txt </br>
 python manage.py runserver
 </br>
 </br>
+</br>
 
 
 
 ## Future Improvement
 💎  대시보드 개발 (키워드 트렌드 분석 & 감성 분석 포함) </br>
 💎  웹 UI 개선 (사용자 친화적인 인터페이스 구축) </br>
-💎  스케줄링 기능 추가 (주기적으로 자동 크롤링)
+💎  스케줄링 기능 추가 (주기적으로 자동 크롤링) </br>
