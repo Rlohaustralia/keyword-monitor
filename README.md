@@ -2,7 +2,7 @@
 
 This project automates web scraping for user-defined keywords, stores the data in MongoDB, and provides an API for retrieval. </br>
 </br>
-<img width="1424" alt="Screenshot 2025-03-20 at 2 12 48 pm" src="https://github.com/user-attachments/assets/bcac90ce-6247-4391-ad89-03622f9b1994" />
+[![Video Thumbnail](https://img.youtube.com/vi/0WT81IIxJYc/0.jpg)](https://www.youtube.com/watch?v=0WT81IIxJYc&autoplay=1)
 
 </br>
 </br>
