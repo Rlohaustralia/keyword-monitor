@@ -44,6 +44,7 @@ Python, Django, HTML, CSS, TailwindCSS, MongoDB
 ## How To Run
 ```bash
 git clone https://github.com/Rlohaustralia/keyword-monitor.git
+```
 cd your-repo
 pip install -r requirements.txt
 python manage.py runserver
