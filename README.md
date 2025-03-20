@@ -10,10 +10,10 @@ This project automates web scraping for user-defined keywords, stores the data i
 
 ## Features
 
-🟢  **Automated Web Scraping** - Collects web data based on keywords  
-🟢  **MongoDB Storage** - Stores extracted data for analysis  
-🟢  **API Integration** - Provides RESTful APIs to retrieve data  
-🟢  **(Upcoming) Dashboard** - Visualizes keyword trends (🚧 Work In Process)  
+👾  **Automated Web Scraping** - Collects web data based on keywords  
+👾  **MongoDB Storage** - Stores extracted data for analysis  
+👾  **API Integration** - Provides RESTful APIs to retrieve data  
+👾  **(Upcoming) Dashboard** - Visualizes keyword trends (🚧 Work In Process)  
 </br>
 </br>
 
