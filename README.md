@@ -10,10 +10,10 @@ This project automates web scraping for user-defined keywords, stores the data i
 
 ## Features
 
-✔️ **Automated Web Scraping** - Collects web data based on keywords  
-✔️ **MongoDB Storage** - Stores extracted data for analysis  
-✔️ **API Integration** - Provides RESTful APIs to retrieve data  
-✔️ **(Upcoming) Dashboard** - Visualizes keyword trends (🚧 Work In Process)  
+🟢  **Automated Web Scraping** - Collects web data based on keywords  
+🟢  **MongoDB Storage** - Stores extracted data for analysis  
+🟢  **API Integration** - Provides RESTful APIs to retrieve data  
+🟢  **(Upcoming) Dashboard** - Visualizes keyword trends (🚧 Work In Process)  
 </br>
 </br>
 
@@ -44,6 +44,6 @@ python manage.py runserver
 
 
 ## Future Improvement
-💎 대시보드 개발 (키워드 트렌드 분석 & 감성 분석 포함) </br>
-💎 웹 UI 개선 (사용자 친화적인 인터페이스 구축) </br>
-💎 스케줄링 기능 추가 (주기적으로 자동 크롤링)
+💎  대시보드 개발 (키워드 트렌드 분석 & 감성 분석 포함) </br>
+💎  웹 UI 개선 (사용자 친화적인 인터페이스 구축) </br>
+💎  스케줄링 기능 추가 (주기적으로 자동 크롤링)
