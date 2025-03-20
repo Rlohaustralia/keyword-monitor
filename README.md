@@ -7,6 +7,7 @@ This project automates web scraping for user-defined keywords, stores the data i
 
 ## Demo 🕹️
 Coming Soon...
+![Demo](./output.gif)
 </br>
 </br>
 </br>
