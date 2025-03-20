@@ -30,7 +30,6 @@ https://youtu.be/0WT81IIxJYc
 - Scraping : BeautifulSoup
 </br>
 </br>
-</br>
 
 
 
@@ -48,7 +47,6 @@ https://github.com/your-repo.git </br>
 cd your-repo </br>
 pip install -r requirements.txt </br>
 python manage.py runserver
-</br>
 </br>
 </br>
 
