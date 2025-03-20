@@ -5,9 +5,8 @@ This project automates web scraping for user-defined keywords, stores the data i
 
 ## Demo
 https://youtu.be/0WT81IIxJYc
-<img width="1252" alt="Screenshot 2025-03-20 at 2 25 17 pm" src="https://github.com/user-attachments/assets/6d0c90dd-6464-4837-800c-94f5dc09f956" /><img width="1263" alt="Screenshot 2025-03-20 at 2 25 58 pm" src="https://github.com/user-attachments/assets/867f9122-5327-4a98-bc13-dc05f623de47" />
-
-
+<img width="600" alt="Screenshot 2025-03-20 at 2 25 17 pm" src="https://github.com/user-attachments/assets/6d0c90dd-6464-4837-800c-94f5dc09f956" />
+<img width="600" alt="Screenshot 2025-03-20 at 2 25 58 pm" src="https://github.com/user-attachments/assets/867f9122-5327-4a98-bc13-dc05f623de47" />
 </br>
 </br>
 
@@ -36,6 +35,7 @@ Python, Django, HTML, CSS, TailwindCSS, MongoDB
 </br>
 
 
+
 ## How To Run
 git clone </br>
 https://github.com/your-repo.git </br>
@@ -44,6 +44,7 @@ pip install -r requirements.txt </br>
 python manage.py runserver
 </br>
 </br>
+
 
 
 ## Future Improvement
