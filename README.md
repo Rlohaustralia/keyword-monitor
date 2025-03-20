@@ -5,9 +5,8 @@ This project automates web scraping for user-defined keywords, stores the data i
 
 
 
-## Demo
+## Demo 🕹️
 https://youtu.be/0WT81IIxJYc
-<img width="1200" alt="Screenshot 2025-03-20 at 2 25 17 pm" src="https://github.com/user-attachments/assets/6d0c90dd-6464-4837-800c-94f5dc09f956" />
 </br>
 </br>
 
