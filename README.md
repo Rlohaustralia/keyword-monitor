@@ -1,12 +1,13 @@
 ## Keyword Monitoring Web App
-This project automates web scraping for user-defined keywords, stores the data in MongoDB, and provides an API for retrieval. </br>
+This project automates web scraping for user-defined keywords, stores the data in MongoDB, and provides an API for retrieval.
 </br>
 </br>
-
+</br>
 
 
 ## Demo 🕹️
 https://youtu.be/0WT81IIxJYc
+</br>
 </br>
 </br>
 
@@ -19,7 +20,7 @@ https://youtu.be/0WT81IIxJYc
 - **(Upcoming) Dashboard** - Visualizes keyword trends (🚧 Work In Process)  
 </br>
 </br>
-
+</br>
 
 
 ## Built with
@@ -29,7 +30,7 @@ https://youtu.be/0WT81IIxJYc
 - Scraping : BeautifulSoup
 </br>
 </br>
-
+</br>
 
 
 ## API Specification
