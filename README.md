@@ -19,10 +19,10 @@ This project automates web scraping for user-defined keywords, stores the data i
 
 
 ## Built with
-Backend : Python, Django </br>
-Frontend : HTML, CSS, TailwindCSS </br>
-Database : MongoDB </br>
-Scraping : BeautifulSoup
+- Backend : Python, Django </br>
+- Frontend : HTML, CSS, TailwindCSS </br>
+- Database : MongoDB </br>
+- Scraping : BeautifulSoup
 </br>
 </br>
 
@@ -39,10 +39,8 @@ git clone </br>
 https://github.com/your-repo.git </br>
 cd your-repo </br>
 </br>
-### Install dependencies
 pip install -r requirements.txt
 </br>
-### Run the Django server
 python manage.py runserver
 </br>
 </br>
