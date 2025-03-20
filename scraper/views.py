@@ -127,6 +127,7 @@ def export_to_excel_view(request):
     
 
 def refresh_data_view(request):
+    user = str(request.user.id)
     
     if request.method == "POST":
         keyword_text = request.POST.get("keyword","").strip()
@@ -139,7 +140,7 @@ def refresh_data_view(request):
 
         # Scarping
         try:
-            subprocess.run(["python", "-m", "scraper.api.main", keyword_text], check=True)
+            subprocess.run(["python", "-m", "scraper.api.main", user, keyword_text], check=True)
             time.sleep(2)
         except subprocess.CalledProcessError as e:
             return HttpResponse(f"Error in refresh process: {e}", status=500)
