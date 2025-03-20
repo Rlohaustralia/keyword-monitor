@@ -45,9 +45,15 @@ Python, Django, HTML, CSS, TailwindCSS, MongoDB
 ```bash
 git clone https://github.com/Rlohaustralia/keyword-monitor.git
 ```
+```bash
 cd your-repo
+```
+```bash
 pip install -r requirements.txt
+```
+```bash
 python manage.py runserver
+```
 </br>
 </br>
 </br>
