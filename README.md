@@ -1,15 +1,18 @@
 ## Keyword Monitoring Web App
-
 This project automates web scraping for user-defined keywords, stores the data in MongoDB, and provides an API for retrieval. </br>
 </br>
-[![Video Thumbnail](https://img.youtube.com/vi/0WT81IIxJYc/0.jpg)](https://www.youtube.com/watch?v=0WT81IIxJYc&autoplay=1)
+</br>
+
+## Demo
+https://youtu.be/0WT81IIxJYc
+<img width="1252" alt="Screenshot 2025-03-20 at 2 25 17 pm" src="https://github.com/user-attachments/assets/6d0c90dd-6464-4837-800c-94f5dc09f956" /><img width="1263" alt="Screenshot 2025-03-20 at 2 25 58 pm" src="https://github.com/user-attachments/assets/867f9122-5327-4a98-bc13-dc05f623de47" />
+
 
 </br>
 </br>
 
 
 ## Features 👾
-
 - **Automated Web Scraping** - Collects web data based on keywords  
 - **MongoDB Storage** - Stores extracted data for analysis  
 - **API Integration** - Provides RESTful APIs to retrieve data  
