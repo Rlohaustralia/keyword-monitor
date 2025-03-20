@@ -34,14 +34,15 @@ Python, Django, HTML, CSS, TailwindCSS, MongoDB
 
 
 ## How To Run
-# Clone the repository
-git clone https://github.com/your-repo.git
-cd your-repo
-
-# Install dependencies
+### Clone the repository
+git clone </br>
+https://github.com/your-repo.git </br>
+cd your-repo </br>
+</br>
+### Install dependencies
 pip install -r requirements.txt
-
-# Run the Django server
+</br>
+### Run the Django server
 python manage.py runserver
 </br>
 </br>
