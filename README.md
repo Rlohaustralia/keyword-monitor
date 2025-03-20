@@ -3,12 +3,14 @@ This project automates web scraping for user-defined keywords, stores the data i
 </br>
 </br>
 
+
+
 ## Demo
 https://youtu.be/0WT81IIxJYc
-<img width="600" alt="Screenshot 2025-03-20 at 2 25 17 pm" src="https://github.com/user-attachments/assets/6d0c90dd-6464-4837-800c-94f5dc09f956" />
-<img width="600" alt="Screenshot 2025-03-20 at 2 25 58 pm" src="https://github.com/user-attachments/assets/867f9122-5327-4a98-bc13-dc05f623de47" />
+<img width="1200" alt="Screenshot 2025-03-20 at 2 25 17 pm" src="https://github.com/user-attachments/assets/6d0c90dd-6464-4837-800c-94f5dc09f956" />
 </br>
 </br>
+
 
 
 ## Features 👾
@@ -20,6 +22,7 @@ https://youtu.be/0WT81IIxJYc
 </br>
 
 
+
 ## Built with
 - Backend : Python, Django </br>
 - Frontend : HTML, CSS, TailwindCSS </br>
@@ -27,10 +30,13 @@ https://youtu.be/0WT81IIxJYc
 - Scraping : BeautifulSoup
 </br>
 </br>
+</br>
+
 
 
 ## API Specification
 Python, Django, HTML, CSS, TailwindCSS, MongoDB
+</br>
 </br>
 </br>
 
@@ -42,6 +48,7 @@ https://github.com/your-repo.git </br>
 cd your-repo </br>
 pip install -r requirements.txt </br>
 python manage.py runserver
+</br>
 </br>
 </br>
 
