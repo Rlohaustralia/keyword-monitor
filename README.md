@@ -35,7 +35,8 @@ Coming Soon...
 
 
 ## API Specification
-Python, Django, HTML, CSS, TailwindCSS, MongoDB
+🗂️ Eng
+🗂️ Kor
 </br>
 </br>
 </br>
