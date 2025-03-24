@@ -35,8 +35,8 @@ Coming Soon...
 
 
 ## API Specification
-🗂️ Eng
-🗂️ Kor
+📒 Eng </br>
+📒 Kor </br>
 </br>
 </br>
 </br>
