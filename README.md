@@ -50,6 +50,7 @@ The project uses MongoDB to store data. Below are the collections and their fiel
   - `_id`: ObjectId
   - `user` : Unique identifier of the user
   - `keyword`: The keyword user added
+</br>
 
 
 **'scraper' collection** </br>
@@ -63,6 +64,9 @@ The project uses MongoDB to store data. Below are the collections and their fiel
   - `content`: The content of the scraped data
   - `source_url`: The URL of the source where the data was found
   - `postdate`: The time when the data was posted
+</br>
+</br>
+</br>
 
 
 ## How To Run
