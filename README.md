@@ -53,6 +53,7 @@ The project uses MongoDB to store data. Below are the collections and their fiel
 
 **'scraper' collection** </br>
 ▸ Stores feedback collected from various social media platforms. </br>
+<img width="1110" alt="Screenshot 2025-03-25 at 4 04 25 pm" src="https://github.com/user-attachments/assets/e938b317-6dbf-445d-ba20-51ec1c201f04" /></br></br>
   - `_id`: ObjectId
   - `user` : Unique identifier of the user
   - `keyword`: The keyword user added
