@@ -34,9 +34,9 @@ Coming Soon...
 </br>
 
 
-## API Specification
-📒 Eng </br>
-📒 Kor </br>
+## API Specification 📒
+You can find the full API specification [Here!](https://ringed-mist-28d.notion.site/API-Specification-1c05a604dab480fe93e8fa75b37847e7)</br></br></br>
+<img width="920" alt="Screenshot 2025-03-25 at 3 11 46 pm" src="https://github.com/user-attachments/assets/a3b1b984-39a0-42ef-ae49-7087e9d7780e" />
 </br>
 </br>
 </br>
