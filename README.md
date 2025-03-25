@@ -45,13 +45,13 @@ You can find the full API specification [Here!](https://ringed-mist-28d.notion.s
 ## MongoDB Design
 The project uses MongoDB to store data. Below are the collections and their fields:</br>
 
-1. 'keyword' collection </br>
+**'keyword' collection** </br>
 ▸ Stores keywords for each user. </br>
   - `_id`: ObjectId
   - `user` : Unique identifier of the user
   - `keyword`: The keyword user added
 
-2. 'scraper' collection </br>
+**'scraper' collection** </br>
 ▸ Stores feedback collected from various social media platforms. </br>
   - `_id`: ObjectId
   - `user` : Unique identifier of the user
