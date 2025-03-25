@@ -44,7 +44,7 @@ You can find the full API specification [Here!](https://ringed-mist-28d.notion.s
 
 
 ## MongoDB Design
-The project uses MongoDB to store data. Below are the collections and their fields:</br>
+The project uses MongoDB to store data. Below are the collections and their fields:</br></br>
 
 **'keyword' collection** </br>
 ▸ Stores keywords for each user. </br></br>
