@@ -42,6 +42,28 @@ You can find the full API specification [Here!](https://ringed-mist-28d.notion.s
 </br>
 
 
+## MongoDB Design
+The project uses MongoDB to store data. Below are the collections and their fields:</br>
+
+1. 'keyword' collection </br>
+**Purpose**: Stores keywords for each user. </br>
+**Fields**:
+  - `_id`: ObjectId
+  - `user` : Unique identifier of the user
+  - `keyword`: The keyword user added
+
+2. 'scraper' collection </br>
+**Purpose**: Stores feedback collected from various social media platforms. </br>
+**Fields**:
+  - `_id`: ObjectId
+  - `user` : Unique identifier of the user
+  - `keyword`: The keyword user added
+  - `platform`: The social media platform (e.g., YouTube, Google, Naver)
+  - `title`: The title of the scraped data
+  - `content`: The content of the scraped data
+  - `source_url`: The URL of the source where the data was found
+  - `postdate`: The time when the data was posted
+
 
 ## How To Run
 ```bash
