@@ -35,9 +35,9 @@ Coming Soon...
 
 
 ## API Specification
-📒 Eng </br>
-📒 Kor </br>
-You can find the full API specification [here](https://ringed-mist-28d.notion.site/API-Specification-1c05a604dab480fe93e8fa75b37847e7). </br>
+You can find the full API specification </br>
+[📒 Eng](https://ringed-mist-28d.notion.site/API-Specification-1c05a604dab480fe93e8fa75b37847e7). </br>
+[📒 Kor](https://ringed-mist-28d.notion.site/API-Specification-1c05a604dab480fe93e8fa75b37847e7). </br>
 </br>
 </br>
 </br>
