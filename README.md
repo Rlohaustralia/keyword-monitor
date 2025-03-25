@@ -46,15 +46,13 @@ You can find the full API specification [Here!](https://ringed-mist-28d.notion.s
 The project uses MongoDB to store data. Below are the collections and their fields:</br>
 
 1. 'keyword' collection </br>
-**Purpose**: Stores keywords for each user. </br>
-**Fields**:
+▸ Stores keywords for each user. </br>
   - `_id`: ObjectId
   - `user` : Unique identifier of the user
   - `keyword`: The keyword user added
 
 2. 'scraper' collection </br>
-**Purpose**: Stores feedback collected from various social media platforms. </br>
-**Fields**:
+▸ Stores feedback collected from various social media platforms. </br>
   - `_id`: ObjectId
   - `user` : Unique identifier of the user
   - `keyword`: The keyword user added
