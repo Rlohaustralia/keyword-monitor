@@ -11,8 +11,6 @@ Coming Soon...
 </br>
 </br>
 
-<img width="1106" alt="Screenshot 2025-03-25 at 4 06 58 pm" src="https://github.com/user-attachments/assets/48023e96-ac06-44da-b1f4-8b9ee0f025e0" />
-
 
 ## Features ✅
 - **Automated Web Scraping** - Collects web data based on keywords  
