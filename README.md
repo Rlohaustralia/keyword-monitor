@@ -51,9 +51,10 @@ The project uses MongoDB to store data. Below are the collections and their fiel
   - `user` : Unique identifier of the user
   - `keyword`: The keyword user added
 
+</br>
 **'scraper' collection** </br>
-▸ Stores feedback collected from various social media platforms. </br>
-<img width="1110" alt="Screenshot 2025-03-25 at 4 04 25 pm" src="https://github.com/user-attachments/assets/e938b317-6dbf-445d-ba20-51ec1c201f04" /></br></br>
+▸ Stores feedback collected from various social media platforms. </br></br>
+<img width="1110" alt="Screenshot 2025-03-25 at 4 04 25 pm" src="https://github.com/user-attachments/assets/e938b317-6dbf-445d-ba20-51ec1c201f04" /></br>
   - `_id`: ObjectId
   - `user` : Unique identifier of the user
   - `keyword`: The keyword user added
@@ -63,7 +64,9 @@ The project uses MongoDB to store data. Below are the collections and their fiel
   - `source_url`: The URL of the source where the data was found
   - `postdate`: The time when the data was posted
 
-
+</br>
+</br>
+</br>
 ## How To Run
 ```bash
 git clone https://github.com/Rlohaustralia/keyword-monitor.git
