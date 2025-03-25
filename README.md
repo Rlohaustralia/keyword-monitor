@@ -11,6 +11,7 @@ Coming Soon...
 </br>
 </br>
 
+<img width="1106" alt="Screenshot 2025-03-25 at 4 06 58 pm" src="https://github.com/user-attachments/assets/48023e96-ac06-44da-b1f4-8b9ee0f025e0" />
 
 
 ## Features ✅
@@ -46,7 +47,8 @@ You can find the full API specification [Here!](https://ringed-mist-28d.notion.s
 The project uses MongoDB to store data. Below are the collections and their fields:</br>
 
 **'keyword' collection** </br>
-▸ Stores keywords for each user. </br>
+▸ Stores keywords for each user. </br></br>
+<img width="1106" alt="Screenshot 2025-03-25 at 4 06 58 pm" src="https://github.com/user-attachments/assets/48023e96-ac06-44da-b1f4-8b9ee0f025e0" /></br>
   - `_id`: ObjectId
   - `user` : Unique identifier of the user
   - `keyword`: The keyword user added
