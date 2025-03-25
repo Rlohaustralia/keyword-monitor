@@ -27,8 +27,8 @@ class SignUpForm(forms.ModelForm):
         return password 
     
     def save(self, commit=True):
-        user = super().save(commit=False) # DB에 저장하지 않고 User 객체 생성
-        user.set_password(self.cleaned_data['password']) # set_password 비밀번호 해싱하여 저장   
+        user = super().save(commit=False) 
+        user.set_password(self.cleaned_data['password']) 
         if commit:
-            user.save() # 최종적으로 DB에 저장
+            user.save() 
         return user

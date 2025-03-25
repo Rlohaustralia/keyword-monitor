@@ -23,6 +23,7 @@ from scraper.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
     # Main
     path('', indexView.as_view(), name='index'),
     path('about/', aboutView.as_view(), name='about'),

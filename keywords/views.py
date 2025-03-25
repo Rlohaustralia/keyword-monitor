@@ -5,6 +5,7 @@ from django.http import HttpResponse, request
 from django.contrib import messages
 from django.http import HttpResponseBadRequest
 import subprocess
+from django.views.decorators.csrf import csrf_exempt
 
 
 
