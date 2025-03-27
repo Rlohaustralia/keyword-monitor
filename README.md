@@ -7,6 +7,9 @@ This project automates web scraping for user-defined keywords, stores the data i
 
 ## Demo 🕹️
 - **Main Page**
+![1](https://github.com/user-attachments/assets/529dfba1-a554-4a0f-ad0e-fe32909fc079)
+![2](https://github.com/user-attachments/assets/e85f1eb5-bd64-41d7-8628-317bce96bad3)
+
 - **Keyword CRUD (Create, Read, Update, Delete)**
 - **Scraping (Live Monitor)**
 - **Sign Up / Login / Logout**
