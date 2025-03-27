@@ -6,10 +6,10 @@ This project automates web scraping for user-defined keywords, stores the data i
 
 
 ## Demo 🕹️
-<img width="700" alt="Screenshot 2025-03-27 at 10 58 30 pm" src="https://github.com/user-attachments/assets/29fa7b4c-5b63-4313-8fb4-3342dc50a554" />
-<img width="700" alt="Screenshot 2025-03-27 at 10 56 16 pm" src="https://github.com/user-attachments/assets/3ad51440-f9d1-4404-934d-66d46491752d" />
-<img width="700" alt="Screenshot 2025-03-27 at 10 53 00 pm" src="https://github.com/user-attachments/assets/65f79565-d48d-40d5-baa0-bb304c32609c" />
-<img width="700" alt="Screenshot 2025-03-27 at 10 52 13 pm" src="https://github.com/user-attachments/assets/8dcc7696-eafe-49d8-8208-6ffb301242fc" />
+<img width="800" alt="Screenshot 2025-03-27 at 10 58 30 pm" src="https://github.com/user-attachments/assets/29fa7b4c-5b63-4313-8fb4-3342dc50a554" />
+<img width="800" alt="Screenshot 2025-03-27 at 10 53 00 pm" src="https://github.com/user-attachments/assets/65f79565-d48d-40d5-baa0-bb304c32609c" />
+<img width="800" alt="Screenshot 2025-03-27 at 10 56 16 pm" src="https://github.com/user-attachments/assets/3ad51440-f9d1-4404-934d-66d46491752d" />
+<img width="800" alt="Screenshot 2025-03-27 at 10 52 13 pm" src="https://github.com/user-attachments/assets/8dcc7696-eafe-49d8-8208-6ffb301242fc" />
 
 
 
