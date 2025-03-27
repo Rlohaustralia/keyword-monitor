@@ -10,7 +10,7 @@ This project automates web scraping for user-defined keywords, stores the data i
 - **Keyword CRUD (Create, Read, Update, Delete)**
 - **Scraping (Live Monitor)**
 - **Sign Up / Login / Logout**
-<img width="1440" alt="Screenshot 2025-03-27 at 9 48 00 pm" src="https://github.com/user-attachments/assets/7bb81458-d300-4c9e-9003-d379dd6e1fcb" />
+![Untitled design (3)](https://github.com/user-attachments/assets/7bab82d4-a4fe-4c41-96e1-82873f096f36)
 
 
 </br>
