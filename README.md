@@ -11,8 +11,8 @@ This project automates web scraping for user-defined keywords, stores the data i
 - **Scraping (Live Monitor)**
 - **Sign Up / Login / Logout**
 <img width="500" alt="Screenshot 2025-03-27 at 9 48 00 pm" src="https://github.com/user-attachments/assets/ed3ab7d1-799c-4622-a6b4-f0585899a67e" />
-<img width="500" alt="Screenshot 2025-03-27 at 10 53 00 pm" src="https://github.com/user-attachments/assets/65f79565-d48d-40d5-baa0-bb304c32609c" />
 <img width="500" alt="Screenshot 2025-03-27 at 10 20 44 pm" src="https://github.com/user-attachments/assets/89f025aa-f55d-4a7c-8223-820f540ca394" />
+<img width="500" alt="Screenshot 2025-03-27 at 10 53 00 pm" src="https://github.com/user-attachments/assets/65f79565-d48d-40d5-baa0-bb304c32609c" />
 <img width="500" alt="Screenshot 2025-03-27 at 10 52 13 pm" src="https://github.com/user-attachments/assets/8dcc7696-eafe-49d8-8208-6ffb301242fc" />
 
 
