@@ -11,12 +11,14 @@ This project automates web scraping for user-defined keywords, stores the data i
 <img width="500" alt="Screenshot 2025-03-27 at 10 44 03 pm" src="https://github.com/user-attachments/assets/9d044c72-bcf4-45cb-9e5f-b4a537efb72a" />
 <img width="500" alt="Screenshot 2025-03-27 at 10 11 01 pm" src="https://github.com/user-attachments/assets/d0f1ecc3-f423-40fd-9a74-703889f82efe" />
 <img width="500" alt="Screenshot 2025-03-27 at 9 49 51 pm" src="https://github.com/user-attachments/assets/54143bdc-97db-4f00-a34b-f5fdbd19d0fa" />
+</br>
 - **Keyword CRUD (Create, Read, Update, Delete)**
-<img width="500" alt="Screenshot 2025-03-27 at 10 20 44 pm" src="https://github.com/user-attachments/assets/89f025aa-f55d-4a7c-8223-820f540ca394" />
+<img width="1000" alt="Screenshot 2025-03-27 at 10 20 44 pm" src="https://github.com/user-attachments/assets/89f025aa-f55d-4a7c-8223-820f540ca394" />
+</br>
 - **Scraping (Live Monitor)**
-<img width="500" alt="Screenshot 2025-03-27 at 10 20 22 pm" src="https://github.com/user-attachments/assets/2cd5e7b5-7a57-4fde-8cd0-0f5c336b7575" />
+<img width="1000" alt="Screenshot 2025-03-27 at 10 20 22 pm" src="https://github.com/user-attachments/assets/2cd5e7b5-7a57-4fde-8cd0-0f5c336b7575" />
+</br>
 - **Sign Up / Login / Logout**
-
 </br>
 </br>
 </br>
