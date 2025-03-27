@@ -6,7 +6,7 @@ This project automates web scraping for user-defined keywords, stores the data i
 
 
 ## Demo 🕹️
-###Link
+</br>
 <img width="900" alt="Screenshot 2025-03-27 at 11 03 59 pm" src="https://github.com/user-attachments/assets/fa7fa83f-4b89-4a19-8290-c917436e1103" />
 <img width="900" alt="Screenshot 2025-03-27 at 10 53 00 pm" src="https://github.com/user-attachments/assets/65f79565-d48d-40d5-baa0-bb304c32609c" />
 <img width="900" alt="Screenshot 2025-03-27 at 10 56 16 pm" src="https://github.com/user-attachments/assets/3ad51440-f9d1-4404-934d-66d46491752d" />
