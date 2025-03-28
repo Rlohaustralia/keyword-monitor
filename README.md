@@ -5,22 +5,22 @@ This project automates web scraping for user-defined keywords, collects relevant
 </br>
 
 ## Overview
-<img width="800" alt="Screenshot 2025-03-27 at 11 03 59 pm" src="https://github.com/user-attachments/assets/fa7fa83f-4b89-4a19-8290-c917436e1103" />
-<img width="800" alt="Screenshot 2025-03-27 at 10 53 00 pm" src="https://github.com/user-attachments/assets/65f79565-d48d-40d5-baa0-bb304c32609c" />
-<img width="800" alt="Screenshot 2025-03-27 at 10 56 16 pm" src="https://github.com/user-attachments/assets/3ad51440-f9d1-4404-934d-66d46491752d" />
-<img width="800" alt="Screenshot 2025-03-27 at 10 52 13 pm" src="https://github.com/user-attachments/assets/8dcc7696-eafe-49d8-8208-6ffb301242fc" />
+<img width="900" alt="Screenshot 2025-03-27 at 11 03 59 pm" src="https://github.com/user-attachments/assets/fa7fa83f-4b89-4a19-8290-c917436e1103" />
+<img width="00" alt="Screenshot 2025-03-27 at 10 53 00 pm" src="https://github.com/user-attachments/assets/65f79565-d48d-40d5-baa0-bb304c32609c" />
+<img width="9000" alt="Screenshot 2025-03-27 at 10 56 16 pm" src="https://github.com/user-attachments/assets/3ad51440-f9d1-4404-934d-66d46491752d" />
+<img width="900" alt="Screenshot 2025-03-27 at 10 52 13 pm" src="https://github.com/user-attachments/assets/8dcc7696-eafe-49d8-8208-6ffb301242fc" />
 
 
 ## Demo 🕹️
-</br>
-<img width="900" alt="Screenshot 2025-03-27 at 11 03 59 pm" src="https://github.com/user-attachments/assets/fa7fa83f-4b89-4a19-8290-c917436e1103" />
-<img width="900" alt="Screenshot 2025-03-27 at 10 53 00 pm" src="https://github.com/user-attachments/assets/65f79565-d48d-40d5-baa0-bb304c32609c" />
-<img width="900" alt="Screenshot 2025-03-27 at 10 56 16 pm" src="https://github.com/user-attachments/assets/3ad51440-f9d1-4404-934d-66d46491752d" />
-<img width="900" alt="Screenshot 2025-03-27 at 10 52 13 pm" src="https://github.com/user-attachments/assets/8dcc7696-eafe-49d8-8208-6ffb301242fc" />
-</br>
-</br>
+- Main page : </br>
+- Keyword CRUD (Create, Read, Update, Delete) : [Watch Demo](https://youtu.be/U0T9XXeQf9A)</br>
+- Scraping and Display data : </br>
+- Sign In, Login, Logout : </br>
+- Genenral pages (About, Contact Us) :
 </br>
 </br>
+</br>
+
 
 ## Features ✅
 - **Automated Web Scraping** - Collects web data based on keywords  
