@@ -13,13 +13,13 @@ This project automates web scraping for user-defined keywords, collects relevant
 </br>
 </br>
 </br>
+</br>
 
 ## Demo 🕹️
-- Main page : </br>
-- Keyword CRUD (Create, Read, Update, Delete) : [Watch Demo](https://youtu.be/U0T9XXeQf9A)</br>
-- Scraping and Display data : </br>
-- Sign In, Login, Logout : </br>
-- Genenral pages (About, Contact Us) :
+- Main page : [Watch Demo](https://youtu.be/LwZ1mjMdGnc) </br>
+- Keyword CRUD & Display scraped data : [Watch Demo](https://youtu.be/Oc5tXCwl4Ao) </br>
+- Sign In, Login, Logout : [Watch Demo](https://youtu.be/6lJhLJfyCQ0)</br>
+- Genenral pages (About, Contact Us) : [Watch Demo](https://youtu.be/K9lD-G4AMpE)
 </br>
 </br>
 </br>
