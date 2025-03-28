@@ -54,7 +54,7 @@ You can find the full API specification [Here!](https://ringed-mist-28d.notion.s
 </br>
 
 
-## MongoDB Design
+## Database Structure
 The project uses MongoDB to store data. Below are the collections and their fields:</br></br>
 
 **'keyword' collection** </br>
