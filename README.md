@@ -1,5 +1,5 @@
 ## Keyword Monitoring Web App
-This project automates web scraping for user-defined keywords, collects relevant postings from Google, YouTube, and Naver (Korea’s No.1 search engine), stores the data in MongoDB, and provides an API for retrieval.</br>
+This project automates web scraping for user-defined keywords, collects relevant postings from Google, YouTube, and Naver (Korea’s No.1 search engine), stores the data in MongoDB, and provides an API for retrieval.</br></br>
 이 프로젝트는 사용자 정의 키워드에 대한 웹 스크래핑을 자동화하여, Google, YouTube, Naver(한국의 대표 검색 엔진)에서 관련 게시물을 수집하고, 데이터를 MongoDB에 저장한 후 API를 통해 데이터를 조회할 수 있도록 제공합니다.
 </br>
 </br>
