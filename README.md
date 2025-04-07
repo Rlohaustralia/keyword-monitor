@@ -28,7 +28,7 @@ This project automates web scraping for user-defined keywords, collects relevant
 - **Automated Web Scraping** - Collects web data based on keywords  
 - **MongoDB Storage** - Stores extracted data for analysis  
 - **API Integration** - Provides RESTful APIs to retrieve data
-- **User Authentication** - Supports user registration & sign-in
+- **User Authentication** - Supports user registration & sign-in & sign-out
 - **(Upcoming) Dashboard** - Visualizes keyword trends (🚧 Work In Process)  
 </br>
 </br>
