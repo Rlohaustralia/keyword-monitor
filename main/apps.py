@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
-# 앱에 대한 메타데이터를 포함하는 파일
+# Meta data about app
 
 class KeywordsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
