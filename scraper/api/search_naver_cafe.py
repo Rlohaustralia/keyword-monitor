@@ -27,7 +27,7 @@ def search_naver_cafe(keyword):
     url = "https://openapi.naver.com/v1/search/cafearticle.json"
     params = {
         "query" : keyword,
-        "display" : 5,
+        "display" : 10,
         "start" : 1,
         "sort" : "sim"
     }

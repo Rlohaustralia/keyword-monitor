@@ -67,3 +67,4 @@ def delete_keyword_view(request, keyword_text):
         scrap_collection.delete_many({"user" : user, "keyword" : keyword_text})
         return redirect("mykeyword")
     return HttpResponseBadRequest("Invalid request method")
+

@@ -29,7 +29,7 @@ def search_naver_blog(keyword):
     url = "https://openapi.naver.com/v1/search/blog.json"
     params = {
         "query" : keyword,
-        "display" : 5,
+        "display" : 10,
         "start" : 1,
         "sort" : "sim"
     }

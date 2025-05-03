@@ -32,7 +32,7 @@ def search_google(keyword):
         "q": keyword,
         "key": GOOGLE_API_KEY,  
         "cx": GOOGLE_CX, 
-        "num": 5
+        "num": 10
     }
 
     response = requests.get(url, params=params)

@@ -29,7 +29,7 @@ def search_youtube(keyword):
         "part" : "snippet",
         "q" : keyword,
         "type" : "video", 
-        "maxResults" : 5,
+        "maxResults" : 10,
         "key" : YOUTUBE_API
     }
 
