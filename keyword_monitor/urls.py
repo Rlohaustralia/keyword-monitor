@@ -20,6 +20,7 @@ from main.views import *
 from users.views import *
 from keywords.views import *
 from scraper.views import *
+from dashboard.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,5 +41,8 @@ urlpatterns = [
     # Scraper
     path('live_monitor/', live_monitor_view, name='live_monitor'),
     path('download/', export_to_excel_view, name='export_excel'),
-    path('refresh_data/', refresh_data_view, name='refresh_data')
+    path('refresh_data/', refresh_data_view, name='refresh_data'),
+
+    # Dashboard
+    path('dashboard/', dashboard_view, name='dashboard')
 ]
