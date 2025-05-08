@@ -21,6 +21,7 @@ from users.views import *
 from keywords.views import *
 from scraper.views import *
 from dashboard.views import *
+from .views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -44,5 +45,8 @@ urlpatterns = [
     path('refresh_data/', refresh_data_view, name='refresh_data'),
 
     # Dashboard
-    path('dashboard/', dashboard_view, name='dashboard')
+    path('dashboard/', dashboard_view, name='dashboard'),
+
+    # Postman API (For TEST only)
+    path('api/reference_keyword/', add_reference_keywords, name='add_reference_keywords')
 ]
